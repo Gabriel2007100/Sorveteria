@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorveteria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <label>Nome:</label>
+    <input id="nome" type="text" placeholder="Seu nome aqui">
+    <hr>
+    <label>Quantidade:</label>
+    <input id="quantidade" type="number" min="1" placeholder="Quantos sorvetes quer?">
+    <hr>
+    <label>Sabores:</label>
+    <select id="sabores">
+        <option value="Chocolate"> Chocolate</option>
+        <option value="Morango">Morango</option>
+        <option value="Baunilha">Baunilha</option>
+        <option value="Uva">Uva</option>
+        <option value="Abacaxi">Abacaxi</option>
+    </select>
+
+    <button id="botao">Fazer pedido</button>
+    <hr>
+
+    <p id="pedidoNome"></p>
+    <p id="pedidoQnt"></p>
+    <p id="pedidoSabor"></p>
+
+    <script src="pinto.js"></script>
+    <script>
+        var botao = document.getElementById('botao');
+        var nome = document.getElementById('nome');
+        var quantidade = document.getElementById('quantidade');
+        var sabores = document.getElementById('sabores');
+        var pedidoNome = document.getElementById('pedidoNome');
+        var pedidoQnt = document.getElementById('pedidoQnt');
+        var pedidoSabor = document.getElementById('pedidoSabor');
+
+        botao.addEventListener('click', function () {
+            var nomeCliente = nome.value;
+            var quantiaSorvetes = quantidade.value;
+            var saborSorvete = sabores.value;
+
+            pedidoNome.innerHTML = "Nome: " + nomeCliente;
+            pedidoQnt.innerHTML = "Quantidade: " + quantiaSorvetes;
+            pedidoSabor.innerHTML = "Sabor: " + saborSorvete;
+        });
+    </script>
+</body>
+
+</html>
